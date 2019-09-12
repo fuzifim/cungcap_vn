@@ -1,0 +1,29 @@
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    margin: 0; 
+	background: #3b5997;
+}
+
+header {
+    background-color: antiquewhite;
+    padding: 5px;
+}
+
+#main{
+    background-color: cornsilk;
+    padding: 10px;
+}
+
+footer {
+    background-color: aliceblue;
+    padding: 5px;
+}
+.carousel-caption{background: rgba(0, 0, 0, 0.5);}
+.carousel-control-next, .carousel-control-prev{background: rgba(0, 0, 0, 0.1);} 
+.row-pad-5 {}
+.row-pad-5 [class*="col-lg"], .row-pad-5 [class*="col-md"], .row-pad-5 [class*="col-sm"]{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.siteList{word-wrap:break-word;} 
+.badge{margin:0px 5px 0px 0px;}

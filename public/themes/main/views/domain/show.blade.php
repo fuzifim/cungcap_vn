@@ -309,7 +309,7 @@ if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
 	</div>
 </div>
 <div class="modal" id="ModalFacebook">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 
 			<!-- Modal Header -->
@@ -356,7 +356,25 @@ if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
             }
             count--;
         },1000);
-        $("#ModalFacebook").modal({backdrop: "static", keyboard: false});
+        var $modal = $("#modal");
+		var keyboard = false;
+		var backdrop = "static";
+
+		if(typeof $modal.data("bs.modal") === "undefined") {
+			$modal.modal({
+				keyboard: keyboard,
+				backdrop: backdrop
+			});
+		} else {
+			$modal.data("bs.modal")._config.keyboard = keyboard;
+			$modal.data("bs.modal")._config.backdrop = backdrop;
+
+			if(keyboard === false) {
+				$modal.off("keydown.dismiss.bs.modal");
+			} else {
+				$modal.data("bs.modal").escape();
+			}
+		}
 
 		$(".siteLink").click(function(){
 			window.open(jQuery.parseJSON($(this).attr("data-url")),"_blank");

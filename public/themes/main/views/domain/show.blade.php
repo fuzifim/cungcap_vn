@@ -347,9 +347,7 @@ if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
 	Theme::asset()->add('core-js-summernote', 'https://code.jquery.com/jquery-3.3.1.js');
 	$dependencies = array(); 
 	Theme::asset()->writeScript('loadLazy','
-		$(window).on("load",function(){
-            $("#ModalFacebook").modal("show");
-        });
+		$("#ModalFacebook").modal("show");
         var count = 100;
         setInterval(function(){
             document.getElementById("timeLeft").innerHTML = count;

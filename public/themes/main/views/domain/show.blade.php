@@ -344,7 +344,6 @@ if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
 </div>
 @partial('footer') 
 <?
-	Theme::asset()->add('core-js-summernote', 'https://code.jquery.com/jquery-3.3.1.js');
 	$dependencies = array(); 
 	Theme::asset()->writeScript('loadLazy','
 		$("#ModalFacebook").modal("show");

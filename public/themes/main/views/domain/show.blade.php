@@ -56,12 +56,12 @@ $string='<script type="application/ld+json">
 		</script>
 	'; 
 Theme::set('appendHeader', $string);
-$ads='true';
-if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
-	$ads='false';
-}else if($note->status=='blacklist' && $note->status=='disable' && $note->status=='delete'){
-	$ads='false';
-}
+$ads='false';
+//if(!empty($note->attribute['ads']) && $note->attribute['ads']=='disable'){
+//	$ads='false';
+//}else if($note->status=='blacklist' && $note->status=='disable' && $note->status=='delete'){
+//	$ads='false';
+//}
 ?>
 @partial('header') 
 @if($ads=='true')

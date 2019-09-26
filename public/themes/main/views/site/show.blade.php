@@ -118,16 +118,9 @@ $string='<script type="application/ld+json">
 	'; 
 }
 Theme::set('appendHeader', $string); 
-$activeAds='true'; 
-if(!AppHelper::instance()->checkBlacklistWord($note->title)){
-	$activeAds='false';
-}
-if(!AppHelper::instance()->checkBlacklistWord($note->description)){
-	$activeAds='false';
-}
+$activeAds='false';
 ?>
-@partial('header') 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+@partial('header')
 <div class="container">
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb mt-2" itemscope itemtype="http://schema.org/BreadcrumbList">

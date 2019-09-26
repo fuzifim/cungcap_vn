@@ -1,12 +1,13 @@
 <?
 
 Theme::setSearch($keyword); 
-Theme::setType('website'); 
-if(AppHelper::instance()->checkBlacklistWord($keyword) && count($searchProduct)>0){
-	$ads='true';
-}else{
-	$ads='false';
-}
+Theme::setType('website');
+$ads='false';
+//if(AppHelper::instance()->checkBlacklistWord($keyword) && count($searchProduct)>0){
+//	$ads='true';
+//}else{
+//	$ads='false';
+//}
 if(!empty($type) && $type=='category'){
 	if(AppHelper::instance()->checkWordCC($note->title)){
 		Theme::setTitle(config('app.name').' '.htmlspecialchars($note->title)); 

@@ -13,7 +13,10 @@
 Route::group(['domain' => '{domain}'], function() {
 	Route::get('/', array(
 		'as' => 'index',
-		'uses' => 'IndexController@index')); 
+		'uses' => 'IndexController@index'));
+    Route::get('/goTo/{url}', array(
+        'as' => 'go.to',
+        'uses' => 'PageController@goToUrl'))->where('url', '.*');
 	Route::get('/category', array(
 		'as' => 'category.list',
 		'uses' => 'IndexController@categoryList'));

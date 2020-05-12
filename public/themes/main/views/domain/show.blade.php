@@ -85,6 +85,7 @@ $ads='false';
 				<button type="button" class="btn btn-primary btn-sm statusDomain" data-type="active">Active</button> 
 				<button type="button" class="btn btn-primary btn-sm statusDomain" data-type="pending">Pending</button> 
 				<button type="button" class="btn btn-danger btn-sm statusDomain" data-type="delete">Delete</button>
+				<button type="button" class="btn btn-danger btn-sm statusDomain" data-type="destroy">Destroy</button>
 			</div>
 		@endif
 	</div>
@@ -318,26 +319,6 @@ $ads='false';
 				<button type="button" class="close" data-dismiss="modal" id="timeLeft">&times;</button>
 			</div>
 
-			<!-- Modal body -->
-			<div class="modal-body text-center">
-				<p>Nhấn vào nút <strong>thích trang</strong> để thấy nội dung <strong>{!! $note->domain !!}</strong></p>
-				<div class="fb-page" data-href="https://www.facebook.com/cungcap.net/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/cungcap.net/" class="fb-xfbml-parse-ignore"></blockquote></div>
-				<p>Hoặc nhấn <a href="https://www.youtube.com/channel/UCTR65Hn65TWPupGBWUMkzuA?sub_confirmation=1" target="_blank" rel="nofollow" class="label label-success"><i class="glyphicon glyphicon-hand-right"></i> vào đây</a> và sau đó xác nhận đăng ký kênh bấm vào <strong>Đăng ký</strong> để xem nội dung {!! $note->domain !!}</p>
-				@if($ads=='true')
-					<div class="modal-footer text-center">
-						<div class="container form-group">
-							<ins class="adsbygoogle"
-								 style="display:block"
-								 data-ad-client="ca-pub-6739685874678212"
-								 data-ad-slot="7536384219"
-								 data-ad-format="auto"></ins>
-							<script>
-								setTimeout(function(){(adsbygoogle = window.adsbygoogle || []).push({})}, 1000);
-							</script>
-						</div>
-					</div>
-				@endif
-			</div>
 
 		</div>
 	</div>
@@ -346,17 +327,6 @@ $ads='false';
 <?
 	$dependencies = array(); 
 	Theme::asset()->writeScript('loadLazy','
-		$("#ModalFacebook").modal("show");
-        var count = 100;
-        setInterval(function(){
-            document.getElementById("timeLeft").innerHTML = count;
-            if (count == 0) {
-                $("#ModalFacebook").modal("hide");
-                document.getElementById("timeLeft").innerHTML = "&times;";
-            }
-            count--;
-        },1000);
-
 		$(".siteLink").click(function(){
 			window.open(jQuery.parseJSON($(this).attr("data-url")),"_blank");
 			return false; 

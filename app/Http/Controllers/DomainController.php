@@ -37,7 +37,12 @@ class DomainController extends ConstructController
 					$note->status='pending'; 
 				}else if($action=='delete'){
 					$note->status='delete'; 
-				}
+				}else if($action=='destroy'){
+                    $note->delete();
+                    return response()->json(['success'=>true,
+                        'message'=>'Đã cập nhật trạng thái tên miền '.$note->domain,
+                    ]);
+                }
 				$note->save(); 
 				return response()->json(['success'=>true,
 					'message'=>'Đã cập nhật trạng thái tên miền '.$note->domain, 

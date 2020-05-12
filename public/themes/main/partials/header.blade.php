@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="{{route('index',config('app.url'))}}">
-		<img src="https://cungcap.net/themes/main/assets/img/logo-red-blue.svg" height="50" class="d-inline-block align-top" alt="Cung Cấp" title="Cung Cấp">
+		<img src="https://cungcap.net/logo.svg" height="50" class="d-inline-block align-top" alt="Cung Cấp" title="Cung Cấp">
 	</a>
 	<a class="btn btn-sm btn-danger d-block d-sm-none" href="{{route('post.add',config('app.url'))}}" rel="nofollow">Đăng tin</a>
 	<a class="btn btn-sm btn-success d-block d-sm-none" href="https://taoweb.cungcap.net" rel="nofollow" target="_blank">Tạo website</a>

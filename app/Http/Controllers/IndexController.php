@@ -391,6 +391,7 @@ class IndexController extends ConstructController
 		return Theme::view('domain.list', $data);
 	}
 	public function domainShow(){
+	    return redirect()->to('https://domain.dolog.net/en/domain/'.$this->_domain,301);
 		if(!empty($this->_domain)){
 			$note=Note::where('type','domain')->where('domain_encode',base64_encode($this->_domain))->first(); 
 			if(!empty($note->id)){
